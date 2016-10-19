@@ -1,0 +1,6 @@
+# include "hello.h"
+int hello()
+{
+    std::cout <<"hello world "<<endl;
+    return 0;
+}

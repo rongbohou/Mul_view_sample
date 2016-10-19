@@ -1,0 +1,28 @@
+# Prerequisites #######################################################
+install opencv2.412: http://www.samontab.com/web/2014/06/installing-opencv-2-4-9-in-ubuntu-14-04-lts/
+
+
+# build################################################################
+
+mkdir build ＆＆ cd build 
+cmake  .. 
+make 
+
+# Usage ##############################################################
+./estimateF
+press "enter":use 7POINT Method find the Fundamental Mat
+press "enter":use RANSAC Method find the Fundamental Mat
+press "enter":use RANSAC Method find the Homography Mat
+
+./robustmatching
+use RANSAC 2NN symmetry test 8POINTS method find the Fundamental Mat
+
+./estimateH
+use RANSAC find the Homography Mat,and splice two images
+important:
+
+
+reference:
+# about coding #
+OpenCV2 Computer-Vision Application Programming Cookbook,中译版《OpenCV2计算机视觉编程手册》
+

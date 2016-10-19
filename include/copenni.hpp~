@@ -1,0 +1,36 @@
+#include <XnCppWrapper.h>
+
+#include <iostream>
+
+using namespace std;
+
+class COpenNI
+{
+public:
+    ~COpenNI() {
+        context.Release();//释放空间
+    }
+    //初始化
+    bool Initial();
+       
+    bool Start();
+
+    bool UpdateData();
+
+public:
+    xn::DepthMetaData depth_metadata;
+    xn::ImageMetaData image_metadata;
+    GestureGenerator gesture_generator;//外部要对其进行回调函数的设置，因此将它设为public类型
+
+private:
+    //该函数返回真代表出现了错误，返回假代表正确
+    bool CheckError(const string error);
+
+private:
+    XnStatus    status;
+    xn::Context     context;
+    xn::DepthGenerator  depth_generator;
+    xn::ImageGenerator  image_generator;
+};
+
+
